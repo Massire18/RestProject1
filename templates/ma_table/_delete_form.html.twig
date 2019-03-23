@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('ma_table_delete', {'id': ma_table.id}) }}" onsubmit="return confirm('Tu es Sur de vouloir supprimer ce champ?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ ma_table.id) }}">
+    <div style="padding-left: 220px;"><button class="btn">Delete</button>
+</form>

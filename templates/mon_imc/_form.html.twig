@@ -1,0 +1,20 @@
+{% block body %}
+   <section>
+    <diV class="container">
+     {{form_start(form, {'attr': {'novalidate': 'novalidate'}})}}
+     
+         <div class="form-group">{{ form_row(form.gender, {'attr':{'class':'form-control'}}) }}</div>
+         <div class="form-group">{{ form_row(form.name, {'attr':{'class':'form-control'}}) }}</div>
+         <div class="form-group">{{ form_row(form.surname, {'attr':{'class':'form-control'}}) }}</div>
+         <div class="form-group">{{ form_row(form.email, {'attr':{'class':'form-control'}}) }}</div>
+         <div class="form-group">{{ form_row(form.age, {'attr':{'class':'form-control'}}) }}</div>
+         <div class="form-group">{{ form_row(form.weight, {'attr':{'class':'form-control'}}) }}</div>
+         <div class="form-group">{{ form_row(form.height, {'attr':{'class':'form-control'}}) }}</div>
+         <br/>
+         <div><button type="submit" class="btn-primary">Envoyer</button></div>
+         
+     {{ form_end(form)}}
+     </div>
+   </section>
+{% endblock %}
+}

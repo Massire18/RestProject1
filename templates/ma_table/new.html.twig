@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New MaTable{% endblock %}
+
+{% block body %}
+   <div style="text-align: center"><h1>Génération de Formulaire</h1></div>
+
+    {{ include('ma_table/_form.html.twig') }}
+
+    <div style="text-align: center"><a href="{{ path('ma_table_index') }}">Lister</a></div>
+{% endblock %}

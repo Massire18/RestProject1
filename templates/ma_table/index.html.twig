@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MaTable index{% endblock %}
+
+{% block body %}
+    <div style="text-align: center"><h1>Tablaux d'informations enregistrées dans la base</h1></div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Gender</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ma_table in ma_tables %}
+            <tr>
+                <td>{{ ma_table.id }}</td>
+                <td>{{ ma_table.gender }}</td>
+                <td>{{ ma_table.name }}</td>
+                <td>{{ ma_table.surname }}</td>
+                <td>{{ ma_table.email }}</td>
+                <td>{{ ma_table.age }}</td>
+                <td>{{ ma_table.weight }}</td>
+                <td>{{ ma_table.height }}</td>
+                <td>
+                    <a href="{{ path('ma_table_show', {'id': ma_table.id}) }}">Voir</a>
+                    <a href="{{ path('ma_table_edit', {'id': ma_table.id}) }}">éditer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('ma_table_new') }}">Créer un nouvel enregistrement !</a>
+{% endblock %}

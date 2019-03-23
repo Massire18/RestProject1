@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('mon_imc_delete', {'id': mon_imc.id}) }}" onsubmit="return confirm('Tu es Sur de vouloir supprimer ce champ?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ mon_imc.id) }}">
+    <div style="padding-left: 220px;"><button class="btn">Delete</button>
+</form>

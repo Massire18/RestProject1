@@ -1,0 +1,18 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+get:
+   path: /imc
+   defaults: { _controller: App\Controller\MonController::getImcAction, _format: json }
+ 
+ 
+post:
+   path: /imc_rest
+   defaults: { _controller: App\Controller\MonController::postImcAction, _format: json }
+
+form:
+   path: /form
+   controller: App\Controller\MonImcController::new
+
+

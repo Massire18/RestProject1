@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MonImc index{% endblock %}
+
+{% block body %}
+    <h1>MonImc index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Gender</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mon_imc in mon_imcs %}
+            <tr>
+                <td>{{ mon_imc.id }}</td>
+                <td>{{ mon_imc.gender }}</td>
+                <td>{{ mon_imc.name }}</td>
+                <td>{{ mon_imc.surname }}</td>
+                <td>{{ mon_imc.email }}</td>
+                <td>{{ mon_imc.age }}</td>
+                <td>{{ mon_imc.weight }}</td>
+                <td>{{ mon_imc.height }}</td>
+                <td>
+                    <a href="{{ path('mon_imc_show', {'id': mon_imc.id}) }}">voir</a>
+                    <a href="{{ path('mon_imc_edit', {'id': mon_imc.id}) }}">éditer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('mon_imc_new') }}">Créer un nouvel enregistrement !</a>
+{% endblock %}

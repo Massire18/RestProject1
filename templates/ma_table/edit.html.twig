@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer MaTable{% endblock %}
+
+{% block body %}
+    <div style="text-align: center"><h1>Editer MaTable</h1></div>
+
+    {{ include('ma_table/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <div style="text-align: center"><a href="{{ path('ma_table_index') }}">lister !</a></div>
+
+    {{ include('ma_table/_delete_form.html.twig') }}
+{% endblock %}

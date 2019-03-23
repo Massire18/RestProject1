@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New IMC{% endblock %}
+
+{% block body %}
+   <div style="text-align: center"><h1>Formulaire</h1></div>
+
+    {{ include('mon_imc/_form.html.twig') }}
+
+    <div style="text-align: center"><a href="{{ path('mon_imc_index') }}">Lister</a></div>
+{% endblock %}
